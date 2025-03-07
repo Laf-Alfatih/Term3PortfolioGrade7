@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     function cursorIndicatorLoop() {
-        currentX += (mouseX - currentX) * 0.1;
-        currentY += (mouseY - currentY) * 0.1;
+        currentX += (mouseX - currentX) * 0.3;
+        currentY += (mouseY - currentY) * 0.3;
         
         cursorIndicator.style.left = `${currentX}px`;
         cursorIndicator.style.top = `${currentY}px`;
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         img.addEventListener('mouseenter', () => {
             cursorIndicator.style.width = '50px';
             cursorIndicator.style.height = '50px';
-            cursorIndicator.style.backgroundColor = 'rgb(244, 178, 84)';
+            cursorIndicator.style.backgroundColor = 'rgb(255, 214, 156)';
         });
 
         img.addEventListener('mouseleave', () => {
