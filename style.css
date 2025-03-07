@@ -37,7 +37,7 @@ body {
     transform: translate(-50%, -50%);
     pointer-events: none;
     mix-blend-mode: difference;
-    transition: background-color 300ms, transform 300ms;
+    transition: 300ms;
 }
 
 .mainCursor {
@@ -88,10 +88,34 @@ header::before {
     font-size: 1.1rem;
 }
 
+.headerSection3 {
+    grid-area: 2/3/3/4;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.quote {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+
+    width: 50%;
+}
+
+.quote > span {
+    font-family: 'Times New Normal';
+}
+
 header > .subtext {
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: 200;
     margin: 50px 100px;
+}
+
+.subject {
+    margin-bottom: 100px;
 }
 
 .headerSection1 {
@@ -143,38 +167,65 @@ header > .subtext {
     animation-duration: 1.5s;
 }
 
-main > .english {
-    margin: 100px;
-}
+.subject { margin: 100px; }
 
-main > .english > .heading {
+main > .subject > .heading {
     display: flex;
     flex-direction: column;
 
     gap: 20px;
 }
 
-main > .english > .heading > .title {
+main > .subject > .heading > .title {
     font-family: 'Times New Normal', sans-serif;
     font-size: 2rem;
 }
 
-main > .english > .heading > .description {
+main > .subject > .heading > .description {
     width: 30vw;
 }
+
+main > .subject > .imageGallery > .image > .projectInfo {
+    opacity: 0;
+    transition: 300ms;
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    left: 20px;
+
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+}
+
+main > .subject > .imageGallery > .image > .projectInfo > .title {
+    font-family: 'Times New Normal', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+main > .subject > .imageGallery > .image > .projectInfo > .description {
+    font-size: 0.8rem;
+    width: 50%;
+}
+
+main > .subject > .imageGallery > .image:hover > .projectInfo  {
+    opacity: 1;
+}
+
 
 main > .english > .imageGallery {
     margin-top: 50px;
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     
     width: 100%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 3/2;
 }
 
-main > .english > .imageGallery img {
+main > .subject > .imageGallery img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -183,14 +234,29 @@ main > .english > .imageGallery img {
         transform: scale(1.01);
 }
 
-main > .english > .imageGallery > .image {
+main > .subject > .imageGallery > .image {
     overflow: hidden;
+    position: relative;
 }
 
-main > .english > .imageGallery > .image:hover > img {
+main > .subject > .imageGallery > .image:hover > img {
     transform: scale(1.1);
+    filter: invert(95%) brightness(20%);
 }
 
 main > .english > .imageGallery > .image1 {
     grid-area: 1/1/2/3;
+}
+
+main > .english > .imageGallery > .image4 { grid-area: 2/2/3/4; }
+
+main > .globalPerspectives > .imageGallery {
+    margin-top: 50px;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    
+    width: 100%;
+    aspect-ratio: 3/1;
 }
